@@ -122,7 +122,7 @@ console.log(media);
    RESULTADO ESPERADO: Sobram 2 pedaços */
 // ✍️ SOLUÇÃO DA DUPLA:
 
-
+console.log("sobram: " + 8 % 3 + " pedaços");
 
 /* ═══ EXERCÍCIO 8 — 🎂 Pode entrar no rolê? ═══
    CONTEXTO: o rolê de sábado é 18+.
