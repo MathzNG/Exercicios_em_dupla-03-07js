@@ -133,7 +133,8 @@ console.log("sobram: " + 8 % 3 + " pedaços");
    let só pode nascer UMA vez no arquivo!)
    RESULTADO ESPERADO: true (ou false, conforme a idade) */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let idadeRole = 31;
+console.log(idadeRole >= 18);
 
 /* ═══ EXERCÍCIO 9 — 🪪 RG *E* dinheiro ═══
    CONTEXTO: para entrar no rolê precisa de RG E dinheiro da entrada.
@@ -143,6 +144,10 @@ console.log("sobram: " + 8 % 3 + " pedaços");
    DICA: && = os DOIS precisam ser true; || = UM já basta.
    RESULTADO ESPERADO: false (com &&)  /  true (com ||) */
 // ✍️ SOLUÇÃO DA DUPLA:
+let temRG = true;
+let temDinheiro = false;
+console.log(temRG && temDinheiro);
+console.log(temRG || temDinheiro);
 
 
 /* ═══ EXERCÍCIO 10 — ⚽ Contador de gols ═══
@@ -151,7 +156,10 @@ console.log("sobram: " + 8 % 3 + " pedaços");
    (ou gols = gols + 1). Mostre antes e depois.
    RESULTADO ESPERADO: 2 / 3 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let gols = 2;
+console.log(gols);
+gols++;
+console.log(gols);
 
 /* ═══ EXERCÍCIO 11 — 🔒 const × let ═══
    CONTEXTO: seu CPF não muda; seu saldo muda toda hora.
@@ -162,7 +170,8 @@ console.log("sobram: " + 8 % 3 + " pedaços");
        let saldoBanco = 50;
        saldoBanco = 45;        // pode?
        // cpf = "000";         // pode?
-   PREVISÃO DA DUPLA: ____________________
+   PREVISÃO DA DUPLA: o código mantem o CPF definido na declaração da variavel. Ao tentar atribuir novo valor 
+   é apresentado um erro, pois a variavel declada como "const", não pode ser alterada.
    RESULTADO ESPERADO: saldoBanco muda numa boa; cpf dá
    TypeError: Assignment to constant variable. */
 const cpf = "111.222.333-44";
@@ -184,7 +193,7 @@ console.log("saldoBanco mudou para", saldoBanco, "| cpf continua", cpf);
    RESULTADO ESPERADO (exemplo):
    Meu nome é Duda, tenho 19 anos e moro em Santo Amaro. */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+console.log("Meu nome é " + nome + " tenho " + idade + " anos e moro em " + bairro)
 
 /* ═══ EXERCÍCIO 13 — 🖥️ Aparecer NA PÁGINA (DOM) ═══
    CONTEXTO: console é para dev; usuário vê a PÁGINA. Hora do DOM!
@@ -198,7 +207,8 @@ console.log("saldoBanco mudou para", saldoBanco, "| cpf continua", cpf);
        document.getElementById("umId").textContent = "um texto";
    RESULTADO ESPERADO: a frase aparece na caixa da página. */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let elemento = document.getElementById("saida");
+elemento.textContent = "Meu nome é " + nome + " tenho " + idade + " anos e moro em " + bairro;
 
 /* ═══ EXERCÍCIO 14 — ⌨️ Lendo o input ═══
    CONTEXTO: o usuário digita o nome dele — você lê.
@@ -216,7 +226,9 @@ console.log("saldoBanco mudou para", saldoBanco, "| cpf continua", cpf);
    RESULTADO ESPERADO: digitou "Rebeca" e clicou → Bem-vindo(a), Rebeca! */
 function aoClicar() {
   // ✍️ SOLUÇÃO DA DUPLA:
-
+let input = document.getElementById("nomeInput").value;
+let frase = "Boas vindas: " + input;
+saida.textContent = frase;
 }
 document.getElementById("btn").addEventListener("click", aoClicar);
 
@@ -235,6 +247,14 @@ document.getElementById("btn").addEventListener("click", aoClicar);
    BÔNUS para a dupla discutir: e se um amigo furar e virarem 3?
    RESULTADO ESPERADO: Cada um paga: R$ 18 */
 // ✍️ SOLUÇÃO DA DUPLA:
+let pizza = 60;
+let refri = 12;
+let amigos = 4;
+let totalDaFesta = (pizza+refri) / amigos;
+console.log(totalDaFesta);
+
+saida.textContent = "O valor para cada amigo fica R$" + totalDaFesta;
+
 
 
 
