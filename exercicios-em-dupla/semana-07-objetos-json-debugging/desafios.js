@@ -27,6 +27,9 @@
        let curso = { nome: "TI", unidade: "Largo Treze" };
        console.log(curso.nome);
    RESULTADO ESPERADO (exemplo): Duda / 19 / Santo Amaro */
+
+   let dev = {nome: 'Matheus', idade: '24', bairro: 'Parque Novo Santo Amaro'};
+   console.log(dev.nome +  ' / ' + dev.idade + ' / ' + dev.bairro);
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -37,6 +40,12 @@
    bolsa: 1200 . Mostre as duas.
    DICA: objeto.novaPropriedade = valor;
    RESULTADO ESPERADO: TechSA / 1200 */
+
+   dev.empresa = 'TechSA';
+   dev.bolsa = '1200';
+
+   console.log(dev.empresa + ' / ' + dev.bolsa);
+  
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -48,6 +57,9 @@
    DICA: dentro da função, leia com p.nome / p.bairro.
    RESULTADO ESPERADO (exemplo):
    Sou Duda, de Santo Amaro, dev em formação! */
+
+   
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
