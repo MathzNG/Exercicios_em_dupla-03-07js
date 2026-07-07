@@ -148,7 +148,12 @@ let idades = [17, 19, 22, 16, 18];
    quando o if deixa.
    RESULTADO ESPERADO: Liberados: 3 de 5 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+for (let element of idades) {
+   if (element >= 18) {
+      console.log("Liberados: " + element)
+      element++
+   }
+}
 
 /* ═══ EXERCÍCIO 9 — 🎆 Réveillon na Paulista ═══
    CONTEXTO: contagem regressiva do ano novo!
@@ -156,7 +161,11 @@ let idades = [17, 19, 22, 16, 18];
    DICA: for (let i = 10; i >= 1; i--)
    RESULTADO ESPERADO: 10, 9, ..., 1, 🎆 FELIZ ANO NOVO! */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+for (let i = 10; i >= 0; i--) {
+   let element = i;
+   console.log(element)
+}
+console.log("🎆 FELIZ ANO NOVO! ano novo !!!")
 
 /* ═══ EXERCÍCIO 10 — 🎓 A média da turma ═══
    CONTEXTO: as notas do grupo de estudos: */
@@ -168,8 +177,12 @@ let notas = [7, 9, 6, 10, 8];
    já nasceu no exercício 6, e um let só nasce uma vez!
    RESULTADO ESPERADO: Média da turma: 8 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
-
+let novo = 0;
+for (let i = 0; i < notas.length; i++) {
+   novo = notas[i] + novo;
+   console.log(novo)
+}
+console.log(`Média da turma: ${novo / notas.length}`)
 /* ═══ EXERCÍCIO 11 — 🍕 Cardápio combinado (loop aninhado) ═══
    CONTEXTO: a pizzaria monta o cardápio combinando cada sabor
    com cada borda: */
@@ -186,6 +199,7 @@ let bordas = ["catupiry", "cheddar"];
    RESULTADO ESPERADO: 6 combinações (3 x 2) */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+// NÃO CONSEGUI FAZER ESSE
 
 /* ═══ EXERCÍCIO 12 — 🚌 Achou, parou (break) ═══
    CONTEXTO: você procura o 675P no painel do terminal — quando
@@ -197,6 +211,17 @@ let linhas = ["637P", "695X", "675P", "746A", "709M"];
    RESULTADO ESPERADO: vendo: 637P / vendo: 695X / 🚌 Achei o 675P!
    (746A e 709M NÃO aparecem) */
 // ✍️ SOLUÇÃO DA DUPLA:
+for (let element of linhas) {
+      
+      if (element = "675P") {
+      console.log("Achei a linha " + element);
+      console.log("Vendo: " + element)
+      break
+     }
+console.log("Vendo: " + element)
+     
+     
+}
 
 
 /* ═══ EXERCÍCIO 13 — 🧾 Pulando os zerados (continue) ═══
