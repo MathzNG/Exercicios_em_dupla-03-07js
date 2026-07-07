@@ -28,8 +28,8 @@
        console.log(curso.nome);
    RESULTADO ESPERADO (exemplo): Duda / 19 / Santo Amaro */
 
-   let dev = {nome: 'Matheus', idade: '24', bairro: 'Parque Novo Santo Amaro'};
-   console.log(dev.nome +  ' / ' + dev.idade + ' / ' + dev.bairro);
+let dev = { nome: 'Matheus', idade: '24', bairro: 'Parque Novo Santo Amaro' };
+console.log(dev.nome + ' / ' + dev.idade + ' / ' + dev.bairro);
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -41,11 +41,11 @@
    DICA: objeto.novaPropriedade = valor;
    RESULTADO ESPERADO: TechSA / 1200 */
 
-   dev.empresa = 'TechSA';
-   dev.bolsa = '1200';
+dev.empresa = 'TechSA';
+dev.bolsa = '1200';
 
-   console.log(dev.empresa + ' / ' + dev.bolsa);
-  
+console.log(dev.empresa + ' / ' + dev.bolsa);
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -58,7 +58,13 @@
    RESULTADO ESPERADO (exemplo):
    Sou Duda, de Santo Amaro, dev em formação! */
 
-   
+
+function apresentar(p) {
+   return `Sou ${p.nome}, do ${p.bairro}, dev em formação!`;
+}
+
+console.log(apresentar(dev));
+
 
 // ✍️ SOLUÇÃO DA DUPLA:
 
@@ -66,14 +72,21 @@
 /* ═══ EXERCÍCIO 4 — 🍕 O carrinho da pizza (array de objetos) ═══
    CONTEXTO: o Brasil ganhou 🇧🇷 e o pedido no app ficou assim: */
 let carrinho = [
-  { item: "Pizza calabresa", preco: 60 },
-  { item: "Refri 2L", preco: 12 },
-  { item: "Borda catupiry", preco: 8 }
+   { item: "Pizza calabresa", preco: 60 },
+   { item: "Refri 2L", preco: 12 },
+   { item: "Borda catupiry", preco: 8 }
 ];
 /* TAREFA: some os preços com for (ou for...of) e mostre:
    Total do pedido: R$ <valor>
    DICA: o preço de cada posição é  carrinho[i].preco
    RESULTADO ESPERADO: Total do pedido: R$ 80 */
+
+let valor = 0;
+for (let i = 0; i < carrinho.length; i++) {
+   valor = valor + carrinho[i].preco;
+}
+console.log(valor);
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -84,6 +97,9 @@ let carrinho = [
    JSON.stringify e mostre.
    RESULTADO ESPERADO (exemplo):
    {"nome":"Duda","idade":19,"bairro":"Santo Amaro","empresa":"TechSA","bolsa":1200} */
+
+let texto = JSON.stringify(dev);
+console.log(texto);
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -94,6 +110,10 @@ let respostaAPI = '{"vaga":"Dev Júnior","salario":2200,"local":"Santo Amaro"}';
    "💼 <vaga> em <local> — R$ <salario>"
    DICA: no TEXTO o ponto não funciona; no OBJETO, sim.
    RESULTADO ESPERADO: 💼 Dev Júnior em Santo Amaro — R$ 2200 */
+
+let objeto = JSON.parse(respostaAPI);
+console.log("💼 " + objeto.vaga + " em " + objeto.local + " — " + "R$" + objeto.salario);
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -103,6 +123,10 @@ let respostaAPI = '{"vaga":"Dev Júnior","salario":2200,"local":"Santo Amaro"}';
    localStorage.setItem("nome", "<seu nome>"), leia com getItem
    e mostre. Depois: APERTE F5 TRÊS VEZES e vejam continuar lá.
    RESULTADO ESPERADO: seu nome — mesmo depois do F5! 🤯 */
+
+localStorage.setItem('nome', 'Matheus Nascimento');
+console.log(localStorage.getItem('nome'));
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -118,6 +142,10 @@ let respostaAPI = '{"vaga":"Dev Júnior","salario":2200,"local":"Santo Amaro"}';
          GUARDAR: setItem + JSON.stringify
          LER:     getItem + JSON.parse
    RESULTADO ESPERADO: TechSA */
+
+localStorage.setItem('dev', JSON.stringify(dev));
+let retorno = JSON.parse(localStorage.getItem('dev'));
+console.log(retorno.empresa);
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -126,7 +154,7 @@ let respostaAPI = '{"vaga":"Dev Júnior","salario":2200,"local":"Santo Amaro"}';
    TAREFA: SEM RODAR, preveja as duas linhas. Depois rode:
        console.log(localStorage.getItem("dev"));
        console.log(localStorage.getItem("chaveFantasma"));
-   PREVISÃO DA DUPLA: linha 1 = ______  linha 2 = ______
+   PREVISÃO DA DUPLA: linha 1 = vai devolver o JSON 'dev', que foi feito no ex08  linha 2 = não existe uma chave chamada chaveFantasma, por isso devolve null.
    DICA: chave inexistente NÃO dá erro — devolve null.
    (Apareceu null nas DUAS linhas? É porque vocês ainda não fizeram
    o exercício 8 — ele é quem guarda a chave "dev". Voltem lá!)
@@ -147,6 +175,12 @@ console.log(localStorage.getItem("chaveFantasma"));
       4º GUARDO DE VOLTA — sem este passo, o F5 esquece tudo!
    DICA: Number(null) vale 0 — a primeira visita já funciona.
    RESULTADO ESPERADO: Visita nº 1, e crescendo a cada F5 */
+
+let visitas = Number(localStorage.getItem('visitas')); // lê a chave visitas
+visitas += 1; // soma +1
+localStorage.setItem('visitas', visitas); // salva a visita na chave para que não seja esquecido ao apertar F5
+console.log('Visitas: ' + visitas);
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -155,6 +189,10 @@ console.log(localStorage.getItem("chaveFantasma"));
    LEIAM a mensagem juntos (nome do erro / o quê / linha) e consertem.
    RESULTADO ESPERADO: 🎮 Bora jogar, Vitor! */
 // console.log("🎮 Bora jogar, " + nomeJogador + "!");
+
+let nomeJogador = 'Matheus';
+console.log("🎮 Bora jogar, " + nomeJogador + "!");
+
 // ✍️ SOLUÇÃO DA DUPLA (o conserto vem ANTES da linha acima):
 
 
@@ -162,10 +200,13 @@ console.log(localStorage.getItem("chaveFantasma"));
    CONTEXTO: a vaquinha da pizza está dando um número maluco —
    e NENHUM erro apareceu. (Dica de detetive: typeof!)
    RESULTADO ESPERADO: Vaquinha: R$ 90 */
-let parte1 = "50";   // veio de um input — desconfie!
+
+// let parte1 = "50";   // veio de um input — desconfie!
+let parte1 = 50;   // o JS ele concatena se ouver ao menos uma string, então "50" + 40 vira 5040 ao inves de somar, isso acontece porque o sinal + em programação geralmente é usado para concatenação e em JS não tipamos a variavel então o JS entende 50 como string ao inves de numero, se fosse ' - ' JS faria a conversão de string para number e ai daria certo.
 let parte2 = 40;
 let vaquinha = parte1 + parte2;
 console.log("Vaquinha: R$ " + vaquinha);
+
 // ✍️ SOLUÇÃO DA DUPLA (mostre a vaquinha CERTA):
 
 
@@ -179,6 +220,15 @@ let jsonCortado = '{"vaga":"Dev Júnior","sal';
    EXEMPLO (molde):
        try { ...o perigoso... } catch (erro) { ...o plano B... }
    RESULTADO ESPERADO: ⚠️ Resposta corrompida, tente de novo: ... */
+
+try {
+   let dados = JSON.parse(jsonCortado);
+   console.log(dados);
+} catch (erro) {
+   console.log("⚠️ Resposta corrompida, tente de novo: " + erro.message);
+}
+
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -198,6 +248,29 @@ let jsonCortado = '{"vaga":"Dev Júnior","sal';
    DICA: guard clauses — if + return cedo, um teste por vez.
    RESULTADO ESPERADO:
    ⚠️ Campo vazio / ⚠️ Isso não é número / ⚠️ Valor tem que ser positivo / ✅ Recarga de R$ 20 */
+
+function validarRecarga(texto) {
+
+   if (texto === '') {
+      return "⚠️ Campo vazio";
+   }
+   else if (isNaN(Number(texto))) {
+      return "⚠️ Isso não é número";
+   }
+   else if (Number(texto) <= 0) {
+      return "⚠️ Valor tem que ser positivo";
+   }
+   else {
+      return "✅ Recarga de R$ " + Number(texto);
+   }
+}
+
+console.log(validarRecarga(''));
+console.log(validarRecarga('abc'));
+console.log(validarRecarga('-1'));
+console.log(validarRecarga('20'));
+
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -219,16 +292,48 @@ let jsonCortado = '{"vaga":"Dev Júnior","sal';
        lerPedido('{quebrado')
        lerPedido('[]')
    RESULTADO ESPERADO: Total: R$ 72 / ⚠️ Pedido inválido / ⚠️ Pedido vazio */
+
+function lerPedido(texto) {
+   try {
+      const lista = JSON.parse(texto);
+      let total = 0;
+
+      if (lista.length === 0) {
+         return "⚠️ Pedido vazio";
+      }
+
+      for (let i = 0; i < lista.length; i++) {
+         total += lista[i].preco;
+      }
+
+      return `Total: R$ ${total}`;
+   } catch (erro) {
+      return "⚠️ Pedido inválido";
+   }
+}
+
+console.log(
+   lerPedido('[{"item":"Pizza","preco":60},{"item":"Refri","preco":12}]')
+);
+
+console.log(
+   lerPedido('{quebrado')
+);
+
+console.log(
+   lerPedido('[]')
+);
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem explicar o par stringify/parse e o try/catch?
-   [ ] Commit nos DOIS GitHubs:
+   [x] Todas as saídas batem com o resultado esperado?
+   [x] Os DOIS sabem explicar o par stringify/parse e o try/catch?
+   [x] Commit nos DOIS GitHubs:
         git commit -m "Semana 07 resolvida — dupla X & Y"
-   [ ] Fechou as 5 listas? 🎉 Vocês estão prontos para a SA —
+   [x] Fechou as 5 listas? 🎉 Vocês estão prontos para a SA —
        e com um portfólio no GitHub para mostrar na entrevista!
    ============================================================ */
