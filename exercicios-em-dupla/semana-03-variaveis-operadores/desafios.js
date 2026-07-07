@@ -256,12 +256,10 @@ console.log(totalDaFesta);
 saida.textContent = "O valor para cada amigo fica R$" + totalDaFesta;
 
 
-
-
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem explicar cada linha via código?
-   [ ] Commit feito nos DOIS repositórios do GitHub?
+   [x] Todas as saídas batem com o resultado esperado?
+   [x] Os DOIS sabem explicar cada linha via código?
+   [x] Commit feito nos DOIS repositórios do GitHub?
         git add . && git commit -m "Semana 03 resolvida — dupla X & Y"
    ============================================================ */
