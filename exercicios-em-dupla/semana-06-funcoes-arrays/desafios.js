@@ -186,7 +186,7 @@ console.log(situacaoVoto(15));
 // ✍️ SOLUÇÃO DA DUPLA:
 let corre = ["aula", "estágio", "academia", "freela"]
 console.log(corre[0]);
-console.log(corre[corre.length-1]);
+console.log(corre[corre.length - 1]);
 
 
 /* ═══ EXERCÍCIO 10 — 🛒 A lista da feira (push/pop) ═══
@@ -233,12 +233,11 @@ function somarLista(numeros) {
    let soma = 0;
    for (let i = 0; i < numeros.length; i++) {
       soma = soma + numeros[i];
-      
+
    }
    return soma;
 }
 console.log(somarLista([10, 20, 30]));
-
 console.log(somarLista([8.8, 15, 12]));
 
 /* ═══ EXERCÍCIO 13 — 🎓 Contando aprovados ═══
@@ -252,6 +251,20 @@ let notasTurma = [8, 4, 7, 9, 5, 10];
       3º return do contador no fim; console.log fora
    DICA: contador + for + if — tudo DENTRO da função.
    RESULTADO ESPERADO: 4 */
+
+function contarAprovados(notas) {
+   let contador = 0;
+
+   for (let i = 0; i < notas.length; i++) {
+
+      if (notas[i] >= 7) {
+         contador++;
+      }
+   }
+   return contador;
+}
+console.log(contarAprovados(notasTurma));
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -261,6 +274,9 @@ let notasTurma = [8, 4, 7, 9, 5, 10];
    "✅ <nome> presente!" para cada nome, usando for...of.
    Chame com ["Duda", "Rebeca", "Vitor"].
    RESULTADO ESPERADO: 3 linhas de presença */
+
+
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -281,14 +297,33 @@ let vendasDia = [35, 80, 12, 95, 47];
    DICA: é o exercício 15 da semana 05 — agora EMBALADO numa
    função reutilizável. Teste também com outro array!
    RESULTADO ESPERADO: Caixa: R$ 269 | Maior venda: R$ 95 */
+
+function fecharCaixa(vendas) {
+   let totalVendas = 0;
+   let maior = 0;
+   for (let i = 0; i < vendas.length; i++) {
+      totalVendas = totalVendas + vendas[i];
+      if (vendas[i] > maior) {
+         maior = vendas[i];
+      }
+   }
+
+   return 'Caixa:' + totalVendas + ' | ' + 'Maior venda: R$' + maior;
+}
+
+let vendasDia2 = [90, 45, 50, 100, 25];
+
+console.log(fecharCaixa(vendasDia2));
+console.log(fecharCaixa(vendasDia));
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem explicar a diferença entre return e console.log?
-   [ ] Commit nos DOIS GitHubs:
+   [x] Todas as saídas batem com o resultado esperado?
+   [x] Os DOIS sabem explicar a diferença entre return e console.log?
+   [x] Commit nos DOIS GitHubs:
         git commit -m "Semana 06 resolvida — dupla X & Y"
    ============================================================ */
