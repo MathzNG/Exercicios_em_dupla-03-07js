@@ -238,7 +238,13 @@ let extrato = [12, 0, 25, 0, 8];
    DICA: continue = "pula ESTA volta e segue para a próxima".
    RESULTADO ESPERADO: gasto: R$ 12 / gasto: R$ 25 / gasto: R$ 8 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let gasto = 0;
+for (const element of extrato) {
+   if (element === 0) {
+      continue
+   }
+console.log(element);
+}
 
 /* ═══ EXERCÍCIO 14 — 🐛 CONSERTE o loop infinito ═══
    CONTEXTO: um colega escreveu isto e a aba dele TRAVOU:
@@ -252,7 +258,11 @@ let extrato = [12, 0, 25, 0, 8];
    condição do false.
    RESULTADO ESPERADO: Faltam 5... até Faltam 1... e o loop PARA. */
 // ✍️ SOLUÇÃO DA DUPLA (a versão consertada):
-
+   let fila = 5;
+   while (fila > 0) {
+      console.log("Faltam " + fila + " pessoas na fila do RG");
+      fila--
+       }
 
 /* ═══ EXERCÍCIO 15 — 🏆 DESAFIO DA DUPLA: fechamento do caixa ═══
    CONTEXTO: sexta de jogo do Brasil, a lanchonete vendeu MUITO: */
@@ -271,13 +281,22 @@ let vendas = [35, 80, 12, 95, 47, 60];
    BÔNUS para discutir: por que 'maior' começa em 0 e não em 100?
    RESULTADO ESPERADO: Total: R$ 329 / Maior venda: R$ 95 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
-
+let totalVendas = 0;
+let maior = 0;
+for (let i = 0; i < vendas.length; i++) {
+   totalVendas = totalVendas+vendas[i];
+   if (vendas[i] > maior) {
+      maior = vendas[i]
+   }
+   
+}
+console.log(`Total vendido: R$${totalVendas}`)
+console.log(`a Maior venda do dia: R$${maior}`)
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem apontar, em cada loop, quem impede o infinito?
-   [ ] Commit nos DOIS GitHubs:
+   [x] Todas as saídas batem com o resultado esperado?
+   [x] Os DOIS sabem apontar, em cada loop, quem impede o infinito?
+   [x] Commit nos DOIS GitHubs:
         git commit -m "Semana 05 resolvida — dupla X & Y"
    ============================================================ */
