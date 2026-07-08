@@ -274,11 +274,13 @@ console.log(contarAprovados(notasTurma));
    "✅ <nome> presente!" para cada nome, usando for...of.
    Chame com ["Duda", "Rebeca", "Vitor"].
    RESULTADO ESPERADO: 3 linhas de presença */
-
-
-
 // ✍️ SOLUÇÃO DA DUPLA:
-
+function fazerChamada(lista) {
+   for (const element of lista) {
+      console.log(element + " Presente!")
+   }
+}
+fazerChamada(["Duda", "Rebeca", "Vitor"]);
 
 /* ═══ EXERCÍCIO 15 — 🏆 DESAFIO DA DUPLA: o caixa completo ═══
    CONTEXTO: fim do expediente na lanchonete. As vendas: */
