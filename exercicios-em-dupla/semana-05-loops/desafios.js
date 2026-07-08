@@ -56,9 +56,9 @@ let guardado = 0;
 let semana = 0;
 while (guardado < 120) {
    semana++
-   guardado = guardado+25;
-   console.log("Semana "+ semana + ": R$" + guardado + " guardado")
-   
+   guardado = guardado + 25;
+   console.log("Semana " + semana + ": R$" + guardado + " guardado")
+
 }
 console.log("🎫 Deu! Bora pro show!")
 /* ═══ EXERCÍCIO 3 — 🔐 A senha do wifi (do-while) ═══
@@ -87,8 +87,8 @@ console.log("🔓 Conectou!")
    RESULTADO ESPERADO: Grito 1 ... Grito 5 (cinco linhas) */
 // ✍️ SOLUÇÃO DA DUPLA:
 for (let i = 0; i < 5; i++) {
-   console.log(`Grito ${i+1}: BRASIL! 🇧🇷`);
-   
+   console.log(`Grito ${i + 1}: BRASIL! 🇧🇷`);
+
 }
 
 /* ═══ EXERCÍCIO 5 — ✖️ Tabuada do 7 ═══
@@ -99,7 +99,7 @@ for (let i = 0; i < 5; i++) {
    RESULTADO ESPERADO: 10 linhas, de 7 x 1 = 7 até 7 x 10 = 70 */
 // ✍️ SOLUÇÃO DA DUPLA:
 for (let i = 0; i <= 10; i++) {
-   console.log(`7x${i} = ${7*i}`);   
+   console.log(`7x${i} = ${7 * i}`);
 }
 
 /* ═══ EXERCÍCIO 6 — 💸 Quanto foi a semana? ═══
@@ -114,7 +114,7 @@ let gastos = [8.8, 15, 12, 20, 30];
 let total = 0;
 for (let i = 0; i < gastos.length; i++) {
    total = total + gastos[i];
-   
+
 }
 console.log(`Total da semana R$ ${total}`)
 
@@ -197,6 +197,13 @@ let bordas = ["catupiry", "cheddar"];
       4º simulem no papel: quantas linhas vão sair? (3 × 2)
    DICA: o de fora anda nos sabores; o de dentro, nas bordas.
    RESULTADO ESPERADO: 6 combinações (3 x 2) */
+
+   for (const sabor of sabores) {
+      for (const borda of bordas) {
+         console.log(sabor + ' com borda de ' + borda);
+      }
+   }
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 // NÃO CONSEGUI FAZER ESSE
@@ -212,15 +219,13 @@ let linhas = ["637P", "695X", "675P", "746A", "709M"];
    (746A e 709M NÃO aparecem) */
 // ✍️ SOLUÇÃO DA DUPLA:
 for (let element of linhas) {
-      
-      if (element = "675P") {
+
+   if (element === "675P") {
       console.log("Achei a linha " + element);
-      console.log("Vendo: " + element)
       break
-     }
-console.log("Vendo: " + element)
-     
-     
+   }
+   console.log(element);
+
 }
 
 

@@ -295,7 +295,7 @@ console.log(validarRecarga('20'));
 
 function lerPedido(texto) {
    try {
-      const lista = JSON.parse(texto);
+      let lista = JSON.parse(texto);
       let total = 0;
 
       if (lista.length === 0) {
@@ -324,8 +324,8 @@ console.log(
    lerPedido('[]')
 );
 
-// ✍️ SOLUÇÃO DA DUPLA:
 
+// ✍️ SOLUÇÃO DA DUPLA:
 
 
 /* ============================================================
