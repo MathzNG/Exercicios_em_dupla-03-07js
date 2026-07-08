@@ -27,6 +27,15 @@
        tocar();
    DICA: criou e não apareceu nada? Faltou CHAMAR.
    RESULTADO ESPERADO: a frase 3 vezes */
+
+function vinheta() {
+   console.log("📻 Você ouve a Rádio Largo 13!");
+}
+
+vinheta();
+vinheta();
+vinheta();
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -36,6 +45,14 @@
    e chame com dois nomes diferentes.
    DICA: o parâmetro é a ENTRADA — cada chamada, um valor.
    RESULTADO ESPERADO: 🎤 Sobe aí, Duda! / 🎤 Sobe aí, João! */
+
+function chamar(nome) {
+   console.log("🎤 Sobe aí, " + nome + "!");
+}
+
+chamar('Matheus');
+chamar('Lucas');
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -47,6 +64,14 @@
    DICA: return DEVOLVE (não mostra) — quem mostra é o console.log
    de quem chamou.
    RESULTADO ESPERADO: 300 */
+
+function dobro(valor) {
+   valor *= 2;
+   console.log(valor);
+}
+dobro(150);
+dobro(200);
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -55,6 +80,13 @@
    TAREFA: crie 'rachar(valorTotal, pessoas)' que RETORNA a divisão.
    Mostre rachar(72, 4).
    RESULTADO ESPERADO: 18 */
+
+function rachar(valorTotal, pessoas) {
+   return valorTotal / pessoas;
+}
+
+console.log(rachar(72, 4));
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -66,6 +98,9 @@
        const triplo = (n) => n * 3;
    DICA: nome NOVO de propósito — redeclarar 'dobro' dá erro.
    RESULTADO ESPERADO: 42 */
+
+
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -76,6 +111,13 @@
    "Bem-vindo(a), <nome>!". Chame SEM argumento e com "Rebeca".
    RESULTADO ESPERADO:
    Bem-vindo(a), visitante! / Bem-vindo(a), Rebeca! */
+
+function sauda(nome = 'visitante') {
+   console.log('Bem-vindo(a), ' + nome + '!');
+}
+
+sauda();
+sauda('Rebeca');
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -89,13 +131,13 @@
        }
        calcularCache();
        // console.log("fora: " + cache);
-   PREVISÃO DA DUPLA: ____________________
+   PREVISÃO DA DUPLA: dentro: 500
    DICA: variável de dentro só vive lá dentro (escopo local).
    RESULTADO ESPERADO: "dentro: 500" funciona; a linha de fora dá
    ReferenceError: cache is not defined */
 function calcularCache() {
-  let cache = 500;
-  console.log("dentro: " + cache);
+   let cache = 500;
+   console.log("dentro: " + cache);
 }
 calcularCache();
 // console.log("fora: " + cache);   // <- descomente, veja, comente
@@ -104,7 +146,7 @@ calcularCache();
 /* ═══ EXERCÍCIO 8 — 🗳️ Pode votar? ═══
    CONTEXTO: título de eleitor sai aos 16; voto obrigatório aos 18.
    TAREFA: crie 'situacaoVoto(idade)' que RETORNA:
-   idade >= 18 → "Voto obrigatório" · idade >= 16 → "Voto opcional"
+   idade >= 18 → "Voto obrigatório" · idade >= 16 → 
    senão → "Ainda não vota". Mostre com 15, 17 e 20.
    🧠 COMO PENSAR:
       1º dentro da função, testo do MAIOR para o menor (18, depois 16)
@@ -112,6 +154,25 @@ calcularCache();
       3º quem mostra é o console.log de FORA, com cada idade
    DICA: if / else if / else DENTRO da função, com return em cada.
    RESULTADO ESPERADO: Ainda não vota / Voto opcional / Voto obrigatório */
+
+function situacaoVoto(idade) {
+
+   if (idade >= 18) {
+      return "Voto obrigatório";
+   }
+   else if (idade >= 16) {
+      return "Voto opcional";
+   }
+   else {
+      return "Ainda não vota";
+   }
+}
+
+console.log(situacaoVoto(19));
+console.log(situacaoVoto(16));
+console.log(situacaoVoto(15));
+
+
 // ✍️ SOLUÇÃO DA DUPLA:
 
 
@@ -123,6 +184,9 @@ calcularCache();
    DICA: último =  corre[corre.length - 1]
    RESULTADO ESPERADO: aula / freela / 4 */
 // ✍️ SOLUÇÃO DA DUPLA:
+let corre = ["aula", "estágio", "academia", "freela"]
+console.log(corre[0]);
+console.log(corre[corre.length-1]);
 
 
 /* ═══ EXERCÍCIO 10 — 🛒 A lista da feira (push/pop) ═══
@@ -132,6 +196,11 @@ calcularCache();
    pop; mostre a lista final.
    RESULTADO ESPERADO: ["banana", "tomate", "pastel"] */
 // ✍️ SOLUÇÃO DA DUPLA:
+let feira = ["banana", "tomate"];
+feira.push("pastel", "Caldo de cana");
+feira.pop()
+console.log(feira)
+
 
 
 /* ═══ EXERCÍCIO 11 — 🔍 Tem pastel? (includes) ═══
@@ -141,6 +210,8 @@ calcularCache();
    EXEMPLO (molde):  lista.includes("item")  → true/false
    RESULTADO ESPERADO: true / false */
 // ✍️ SOLUÇÃO DA DUPLA:
+console.log(feira.includes("pastel"));
+console.log(feira.includes("Picanha"));
 
 
 /* ═══ EXERCÍCIO 12 — 🧮 Função que soma lista ═══
@@ -158,6 +229,17 @@ calcularCache();
    RESULTADO ESPERADO: 60 / 35.8 */
 // ✍️ SOLUÇÃO DA DUPLA:
 
+function somarLista(numeros) {
+   let soma = 0;
+   for (let i = 0; i < numeros.length; i++) {
+      soma = soma + numeros[i];
+      
+   }
+   return soma;
+}
+console.log(somarLista([10, 20, 30]));
+
+console.log(somarLista([8.8, 15, 12]));
 
 /* ═══ EXERCÍCIO 13 — 🎓 Contando aprovados ═══
    CONTEXTO: as notas da turma saíram: */
